@@ -17,7 +17,7 @@ function invalid_booking($message)
   print_footer(TRUE);
 }
 
-
+//
 // (1) Check the user is authorised for this page
 //  ---------------------------------------------
 checkAuthorised();
