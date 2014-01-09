@@ -1,5 +1,4 @@
 # MRBS-OTRS
-=========
 	MRBS-OTRS is a function to connect the MRBS with the Ticketsystem OTRS.
 	The aim is to add a ticketnumber from OTRS into the description of the booking in MRBS.
 	Every notification of the booking goes into the same ticket as article.
@@ -12,6 +11,7 @@
 
 ### Installation
 
+[...] coming soon [...]
 
 ### Prerequisites
 
@@ -19,7 +19,7 @@ SOAP-PHP...
 [...] coming soon [...]
 
 ### Configuration
-
+```no-highlight
 $create_otrs_ticket = TRUE; 								// activate otrs-create-ticket function
 
 $otrs_ticket["area"][] = "2";								// area number
@@ -44,7 +44,7 @@ $otrs_historytype 		= "WebRequestCustomer";				//
 $otrs_historycomment	= "created from MRBS via PHP";		//		
 $otrs_contenttype		= "text/plain; charset=ISO-8859-1";	//	
 $otrs_userid			=  1;								//	user in OTRS (1 = systemuser)		
-
+```
 
 #Download
 
