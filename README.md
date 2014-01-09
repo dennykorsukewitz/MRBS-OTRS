@@ -3,21 +3,33 @@
 	The aim is to add a ticketnumber from OTRS into the description of the booking in MRBS.
 	Every notification of the booking goes into the same ticket as article.
 
+##### Table of Contents  
+[Feature List](#Feature)  
+[Installation](#Installation)  
+[Prerequisites](#Prerequisites)  
+[Configuration](#Configuration)  
+[OTRS configuration](#OTRSconfiguration)  
+[Download](#Download)  
+  
 
-## Feature List
+<a name="Feature"/>
+### Feature List
 * create a ticket in OTRS via SOAP::PHP
 * insert the tickernumber into the description of the booking room
 * tada = magic
 
+<a name="Installation"/>
 ### Installation
 
 [...] coming soon [...]
 
+<a name="Prerequisites"/>
 ### Prerequisites
 
 SOAP-PHP...
 [...] coming soon [...]
 
+<a name="Configuration"/>
 ### Configuration
 ```no-highlight
 $create_otrs_ticket = TRUE; 								// activate otrs-create-ticket function
@@ -46,7 +58,8 @@ $otrs_contenttype		= "text/plain; charset=ISO-8859-1";	//
 $otrs_userid			=  1;								//	user in OTRS (1 = systemuser)		
 ```
 
-#Download
+<a name="Download"/>
+### Download
 
 For download see [https://github.com/dennybresch/MRBS-OTRS)
 
