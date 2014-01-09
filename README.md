@@ -1,7 +1,9 @@
 # MRBS-OTRS
-	MRBS-OTRS is a function to connect the MRBS with the Ticketsystem OTRS.
+	MRBS-OTRS is a function to 'connect' the MRBS with the Ticketsystem OTRS.
 	The aim is to add a ticketnumber from OTRS into the description of the booking in MRBS.
 	Every notification of the booking goes into the same ticket as article.
+	How it works: create a ticket in OTRS via the OTRS rpc interface from PHP.
+	
 
 ##### Table of Contents  
 [Feature List](#Feature)  
@@ -9,6 +11,7 @@
 [Prerequisites](#Prerequisites)  
 [Configuration](#Configuration)  
 [OTRS configuration](#OTRSconfiguration)  
+[Files](#Files)  
 [Download](#Download)  
   
 
@@ -26,11 +29,18 @@
 <a name="Prerequisites"/>
 ### Prerequisites
 
+* install PHP-SOAP:  sudo apt-get install php-soap
+* enable the RPC interface in OTRS: Admin > SysConfig > Framework > Core::Soap
+* set SOAP:username and SOAP:password
+* Perl module SOAP::Lite on otrs-server
+
 SOAP-PHP...
 [...] coming soon [...]
 
 <a name="Configuration"/>
 ### Configuration
+Add these parameter into "config.inc.php" file.
+
 ```no-highlight
 $create_otrs_ticket = TRUE; 								// activate otrs-create-ticket function
 
@@ -38,6 +48,7 @@ $otrs_ticket["area"][] = "2";								// area number
 $otrs_ticket["area"][] = "5";
 [...]
 
+<a name="OTRSconfiguration"/>
 *OTRS configuration*
 $otrs_url      	= "http://domain.de/otrs/rpc.pl"; 			// URL of your otrs-server
 $otrs_username	= "otrs";									// OTRS-Webinterface -> SysConfig -> Framework -> Core::SOAP -> SOAP:User
@@ -57,6 +68,9 @@ $otrs_historycomment	= "created from MRBS via PHP";		//
 $otrs_contenttype		= "text/plain; charset=ISO-8859-1";	//	
 $otrs_userid			=  1;								//	user in OTRS (1 = systemuser)		
 ```
+
+<a name="Files"/>
+### Files
 
 <a name="Download"/>
 ### Download
