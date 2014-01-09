@@ -1,18 +1,24 @@
-MRBS-OTRS
+# MRBS-OTRS
 =========
+	MRBS-OTRS is a function to connect the MRBS with the Ticketsystem OTRS.
+	The aim is to add a ticketnumber from OTRS into the description of the booking in MRBS.
+	Every notification of the booking goes into the same ticket as article.
 
-**Feature List**
-[...] coming soon [...]
 
-#Installation
-[...] coming soon [...] 
+## Feature List
+* create a ticket in OTRS via SOAP::PHP
+* insert the tickernumber into the description of the booking room
+* tada = magic
 
-#Prerequisites
+### Installation
+
+
+### Prerequisites
 
 SOAP-PHP...
 [...] coming soon [...]
 
-#Configuration
+### Configuration
 
 $create_otrs_ticket = TRUE; 								// activate otrs-create-ticket function
 
