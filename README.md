@@ -72,6 +72,10 @@ $otrs_userid			=  1;								//	user in OTRS (1 = systemuser)
 <a name="Files"/>
 ### Files
 
+config.inc.php
+edit_entry_handler.php
+otrs.php
+
 <a name="Download"/>
 ### Download
 
