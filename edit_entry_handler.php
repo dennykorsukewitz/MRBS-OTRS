@@ -48,7 +48,8 @@ $is_admin = (authGetUserLevel($user) >= 2);
 // the validity of a proposed booking and does not make the booking.
 
 // Get non-standard form variables
-$formvars = array('create_by'          => 'string',
+$formvars = array('save_button'        => 'string',
+				  'create_by'          => 'string',
                   'name'               => 'string',
                   'description'        => 'string',
                   'start_seconds'      => 'int',
@@ -92,8 +93,9 @@ $formvars = array('create_by'          => 'string',
                  
 foreach($formvars as $var => $var_type)
 {
-  $$var = get_form_var($var, $var_type);
+  echo $$var = get_form_var($var, $var_type);
 }
+
 
 // BACK:  we didn't really want to be here - send them to the returl
 if (!empty($back_button))
@@ -634,22 +636,35 @@ foreach ($rooms as $room_id)
   {
     $status |= STATUS_TENTATIVE;
   }
-  $booking['status'] = $status;
-  
- 
+   $booking['status'] = $status;
+   
 }
 
-$just_check = $ajax && function_exists('json_encode') && !$commit;
 $this_id = (isset($id)) ? $id : NULL;
-
-
-## OTRS ##
-include("otrs.php");
-## OTRS END ##
-
 $bookings[] = $booking;
 
 
+### OTRS ###
+$just_check = TRUE;
+$result = mrbsMakeBookings($bookings, $this_id, $just_check, $skip, $original_room_id, $need_to_send_mail, $edit_type);
+
+#print('<pre>');
+#print_r($_POST);
+#print('</pre>'); 
+#echo $_POST['save_button'];
+
+#if ($result['valid_booking']== TRUE && $booking['name'] && $booking['description'] && !isset($id) && $_POST['save_button'])
+if ($result['valid_booking']== TRUE && $booking['name']  && !isset($id) )
+{
+	include("otrs.php");
+}
+
+### OTRS END ###
+
+
+
+
+$just_check = $ajax && function_exists('json_encode') && !$commit;
 $result = mrbsMakeBookings($bookings, $this_id, $just_check, $skip, $original_room_id, $need_to_send_mail, $edit_type);
 
 // If we weren't just checking and this was a succesful booking and

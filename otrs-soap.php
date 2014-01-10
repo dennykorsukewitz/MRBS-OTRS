@@ -1,9 +1,8 @@
-<?PHP
+<?php
 
 # This file contains a create-ticket function for OTRS
 # Used a SOAP connection to create a ticket in OTRS via PHP
 # error_reporting(E_ALL);
- 
 
 # Set up a new SOAP connection:
 $client = new SoapClient(null, array('location'  =>
@@ -61,6 +60,7 @@ array($otrs_username, $otrs_password,
 "TicketObject",   "TicketNumberLookup",
 "TicketID",       $TicketID,
 ));
+
 
 # Make sure the ticket number is not displayed in scientific notation
 # See http://forums.otrs.org/viewtopic.php?f=53&t=5135

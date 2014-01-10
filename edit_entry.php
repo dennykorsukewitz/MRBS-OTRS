@@ -597,7 +597,7 @@ $end_seconds = get_form_var('end_seconds', 'int');
 $selected_rooms = get_form_var('rooms', 'array');
 $start_date = get_form_var('start_date', 'string');
 $end_date = get_form_var('end_date', 'string');
-
+$save_button = get_form_var('save_button', 'string');
 
 // Check the user is authorised for this page
 checkAuthorised();
@@ -890,7 +890,7 @@ else
   $room_id       = $room;
   $private       = $private_default;
   $confirmed     = $confirmed_default;
-
+  
   // now initialise the custom fields
   foreach ($fields as $field)
   {
@@ -1376,8 +1376,7 @@ if (($edit_type == "series") && $repeats_allowed)
     
     // The Submit button
     echo "<div id=\"edit_entry_submit_save\">\n";
-    echo "<input class=\"submit default_action\" type=\"submit\" name=\"save_button\" value=\"" .
-      get_vocab("save") . "\">\n";
+    echo "<input class=\"submit default_action\" type=\"submit\"  name=\"save_button\" value=\"" .  get_vocab("save") . "\" > \n";
     echo "</div>\n";
     
     // divs to hold the results of the Ajax checking of the booking
