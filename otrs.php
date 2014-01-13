@@ -1,5 +1,15 @@
 <?php
 
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+
+##[Ticket#2014011310000296] [PC-Hilfe] [Rückfrage] -
+#Eintrag für FU Berlin - Universitätsbibliothek MRBS geändert
+#(iPad3 (UB8227) - Vormittag, Montag 13 Januar 2014 / bresch)  
+
+
+
 ## OTRS ##
 if ($create_otrs_ticket == TRUE   ) # if create otrs ticket function is activated
 { 		
@@ -7,7 +17,10 @@ if ($create_otrs_ticket == TRUE   ) # if create otrs ticket function is activate
 	{		
 		if ($area == $key) 			# if the current booking room is in the ticket_creation_area = create a ticket in otrs
 		{
-			$otrs_title				= 	$otrs_title_add . " " .  $booking['create_by'];			# The Tilte/Subject of the Ticket
+			echo "Rooms: |".$area . $room . "|<br>";
+			echo "starttime: |" . $starttime. "|<br>";
+			
+			$otrs_title				= 	$otrs_title_add . " " .  $booking['create_by'] . " $day.$month.$year";			# The Tilte/Subject of the Ticket
 			$otrs_from  			= 	$booking['create_by'] . "@"	. $otrs_from_domain;		# Sender of the Ticket
 			$otrs_body				=   $booking['description'];								# mrbs description as ticket body
 			include("otrs-soap.php");															# Includes the main soap-function
