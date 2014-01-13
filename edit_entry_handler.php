@@ -48,8 +48,7 @@ $is_admin = (authGetUserLevel($user) >= 2);
 // the validity of a proposed booking and does not make the booking.
 
 // Get non-standard form variables
-$formvars = array('save_button'        => 'string',
-				  'create_by'          => 'string',
+$formvars = array('create_by'          => 'string',
                   'name'               => 'string',
                   'description'        => 'string',
                   'start_seconds'      => 'int',
@@ -89,11 +88,12 @@ $formvars = array('save_button'        => 'string',
                   'timetohighlight'    => 'int',
                   'page'               => 'string',
                   'commit'             => 'string',
-                  'ajax'               => 'int');
+                  'ajax'               => 'int',
+				  'savebutton'        => 'string');
                  
 foreach($formvars as $var => $var_type)
 {
-  echo $$var = get_form_var($var, $var_type);
+  $$var = get_form_var($var, $var_type);
 }
 
 
@@ -645,23 +645,14 @@ $bookings[] = $booking;
 
 
 ### OTRS ###
-$just_check = TRUE;
+$just_check = TRUE;  # just check the valid booking
 $result = mrbsMakeBookings($bookings, $this_id, $just_check, $skip, $original_room_id, $need_to_send_mail, $edit_type);
-
-#print('<pre>');
-#print_r($_POST);
-#print('</pre>'); 
-#echo $_POST['save_button'];
-
-#if ($result['valid_booking']== TRUE && $booking['name'] && $booking['description'] && !isset($id) && $_POST['save_button'])
-if ($result['valid_booking']== TRUE && $booking['name']  && !isset($id) )
+# if the booking is vaild & no other booking exist & save button was pressed = include otrs.php
+if ($result['valid_booking']== TRUE  && !isset($id) && isset($savebutton) )
 {
 	include("otrs.php");
 }
-
 ### OTRS END ###
-
-
 
 
 $just_check = $ajax && function_exists('json_encode') && !$commit;

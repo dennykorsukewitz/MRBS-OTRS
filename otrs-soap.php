@@ -6,50 +6,50 @@
 
 # Set up a new SOAP connection:
 $client = new SoapClient(null, array('location'  =>
-$otrs_url,
-                                     'uri'       => "Core",
-                                     'trace'     => 1,
-                                     'login'     => $otrs_username,
-                                     'password'  => $otrs_password,
-                                     'style'     => SOAP_RPC,
-                                     'use'       => SOAP_ENCODED));
+	$otrs_url,						# otrs-server url/ip	
+	'uri'       => "Core",
+	'trace'     => 1,				
+	'login'     => $otrs_username,	# soap userlogin
+	'password'  => $otrs_password,	# soap userpassword
+	'style'     => SOAP_RPC,		
+	'use'       => SOAP_ENCODED));	
 
-# Create a new ticket. The function returns the Ticket ID.
-$TicketID = $client->__soapCall("Dispatch", array($otrs_username, $otrs_password,
-"TicketObject", "TicketCreate", 
-"Title",        $otrs_title, 
-"Queue",        $otrs_queue, 
-"Lock",         $otrs_lock, 
-"PriorityID",   $otrs_priority, 
-"State",        $otrs_state, 
-"CustomerUser", $otrs_from, 
-"OwnerID",      $otrs_userid, 
-"UserID",       $otrs_userid,
+# Create a new ticket. The function returns the Ticket ID. Ticket-properties
+$TicketID = $client->__soapCall("Dispatch", array($otrs_username, $otrs_password, 
+	"TicketObject", "TicketCreate", 	# action = create a ticket
+	"Title",        $otrs_title, 	    # ticket-title: "MRBS Room booking" ...
+	"Queue",        $otrs_queue, 		# ticket-queue: "postmaster", "raw" etc.
+	"Lock",         $otrs_lock, 		# ticket-lock-state: lock or unlock state
+	"PriorityID",   $otrs_priority, 	# ticket-priority: 1 = very low, 2,3,4, 5 = very high
+	"State",        $otrs_state, 		# ticket-state: open, new,closed successful,closed unsuccessful, etc
+	"CustomerUser", $otrs_from,         # CustomerUser: who did the booking...
+	"OwnerID",      $otrs_userid,       # user ID: OTRS-User-ID of the user who creates the ticket
+	"UserID",       $otrs_userid,		# -||-
 ));
 
 
 # A ticket is not usefull without at least one article. The function
-# returns an Article ID. 
+# returns an Article ID.  Article-properties
 $ArticleID = $client->__soapCall("Dispatch", 
-array($otrs_username, $otrs_password,
-"TicketObject",   "ArticleCreate",
-"TicketID",       $TicketID,
-"ArticleType",    $otrs_articletype,
-"SenderType",     $otrs_sendertype,
-"HistoryType",    $otrs_historytype,
-"HistoryComment", $otrs_historycomment,
-"From",           $otrs_from,
-"Subject",        $otrs_title,
-"ContentType",    $otrs_contenttype,
-"Body",           $booking['description'],
-"UserID",         $otrs_userid,
-"Loop",           0,
+array($otrs_username, $otrs_password,		#
+"TicketObject",   "ArticleCreate",			# create a article in the ticket
+"TicketID",       $TicketID,				# created TicketID
+"ArticleType",    $otrs_articletype,		# article needs a article type
+"SenderType",     $otrs_sendertype,			# 
+"HistoryType",    $otrs_historytype,		#
+"HistoryComment", $otrs_historycomment,		#
+"From",           $otrs_from,				# CustomerUser: who did the booking...
+"Subject",        $otrs_title,				#
+"ContentType",    $otrs_contenttype,		#
+"Body",           $otrs_body,				# the booking description as article body
+"UserID",         $otrs_userid,				# user ID: OTRS-User-ID of the user who creates the ticket
+"Loop",           0,				
 "AutoResponseType", 'auto reply',
 "OrigHeader", array(
         'From' => $otrs_from,
         'To' => $otrs_queue,
         'Subject' => $otrs_title,
-        'Body' => $booking['description']
+        'Body' => $otrs_body
     ),
 ));
 
