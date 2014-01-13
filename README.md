@@ -24,7 +24,54 @@
 <a name="Installation"/>
 ### Installation
 
-[...] coming soon [...]
+# MRBS-Server (sending server)
+	* install the package php-soap
+	
+# OTRS-Server (receiving server)
+	* enable the RPC interface in OTRS 
+	* set a user name and password under Admin > SysConfig > Framework > Core::Soap (webinterface)
+
+# config.inc.php
+	* add the configuration of the config.inc.php
+	* change ticket-properties
+
+# otrs-soap.php
+	* add the file otrs-soap.php to the ./web directory
+
+# otrs.php
+	* add the file otrs.php to the ./web directory
+	
+# edit_entry.php
+	* edit_entry.php (1.4.10) is updated by following code:
+	```
+	-    echo "<input class=\"submit default_action\" type=\"submit\"  name=\"save_button\" value=\"" .  get_vocab("save") . "\" > \n";
+	+    echo "<input class=\"submit default_action\" type=\"submit\"  name=\"savebutton\" value=\"" .  get_vocab("save") . "\" > \n";
+	
+	```
+# edit_entry.js.php
+	* edit_entry.js-php (1.4.10) is updated by following code:
+	```
+	-      if ($(this).data('submit') === 'save_button')
+	+      if ($(this).data('submit') === 'savebutton')	
+	```
+
+# edit_entry_handler.php
+	* edit_entry_handler.php (1.4.10) is extended by following code:
+	```
+	+    	### OTRS ###
+	+    	$just_check = TRUE;  # just check the valid booking
+	+    	$result = mrbsMakeBookings($bookings, $this_id, $just_check, $skip, $original_room_id, $need_to_send_mail, $edit_type);
+	+    	# if the booking is vaild & no other booking exist & save button was pressed = include otrs.php
+	+    	if ($result['valid_booking']== TRUE  && !isset($id) && isset($savebutton) )
+	+    	{
+	+    		include("otrs.php");
+	+    	}
+	+    	### OTRS END ###
+		
+		$just_check = $ajax && function_exists('json_encode') && !$commit;
+		$this_id = (isset($id)) ? $id : NULL;
+		$result = mrbsMakeBookings($bookings, $this_id, $just_check, $skip, $original_room_id, $need_to_send_mail, $edit_type);
+	```
 
 <a name="Prerequisites"/>
 ### Prerequisites

@@ -638,10 +638,8 @@ foreach ($rooms as $room_id)
   }
    $booking['status'] = $status;
    
+   $bookings[] = $booking;    
 }
-
-$this_id = (isset($id)) ? $id : NULL;
-$bookings[] = $booking;
 
 
 ### OTRS ###
@@ -654,8 +652,8 @@ if ($result['valid_booking']== TRUE  && !isset($id) && isset($savebutton) )
 }
 ### OTRS END ###
 
-
 $just_check = $ajax && function_exists('json_encode') && !$commit;
+$this_id = (isset($id)) ? $id : NULL;
 $result = mrbsMakeBookings($bookings, $this_id, $just_check, $skip, $original_room_id, $need_to_send_mail, $edit_type);
 
 // If we weren't just checking and this was a succesful booking and
