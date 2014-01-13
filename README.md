@@ -24,38 +24,38 @@
 <a name="Installation"/>
 ### Installation
 
-# MRBS-Server (sending server)
+#### MRBS-Server (sending server)
 	* install the package php-soap
 	
-# OTRS-Server (receiving server)
+#### OTRS-Server (receiving server)
 	* enable the RPC interface in OTRS 
 	* set a user name and password under Admin > SysConfig > Framework > Core::Soap (webinterface)
 
-# config.inc.php
+#### config.inc.php
 	* add the configuration of the config.inc.php
 	* change ticket-properties
 
-# otrs-soap.php
+#### otrs-soap.php
 	* add the file otrs-soap.php to the ./web directory
 
-# otrs.php
+#### otrs.php
 	* add the file otrs.php to the ./web directory
 	
-# edit_entry.php
+#### edit_entry.php
 	* edit_entry.php (1.4.10) is updated by following code:
 	```
 	-    echo "<input class=\"submit default_action\" type=\"submit\"  name=\"save_button\" value=\"" .  get_vocab("save") . "\" > \n";
 	+    echo "<input class=\"submit default_action\" type=\"submit\"  name=\"savebutton\" value=\"" .  get_vocab("save") . "\" > \n";
 	
 	```
-# edit_entry.js.php
+#### edit_entry.js.php
 	* edit_entry.js-php (1.4.10) is updated by following code:
 	```
 	-      if ($(this).data('submit') === 'save_button')
 	+      if ($(this).data('submit') === 'savebutton')	
 	```
 
-# edit_entry_handler.php
+#### edit_entry_handler.php
 	* edit_entry_handler.php (1.4.10) is extended by following code:
 	```
 	+    	### OTRS ###
