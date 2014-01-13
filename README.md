@@ -81,8 +81,6 @@
 * set SOAP:username and SOAP:password
 * Perl module SOAP::Lite on otrs-server
 
-SOAP-PHP...
-[...] coming soon [...]
 
 <a name="Configuration"/>
 ### Configuration
