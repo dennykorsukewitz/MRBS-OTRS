@@ -87,31 +87,31 @@
 Add these parameter into "config.inc.php" file.
 
 ```no-highlight
-$create_otrs_ticket = TRUE; 								// activate otrs-create-ticket function
+$create_otrs_ticket = TRUE;                                 // activate otrs-create-ticket function
 
-$otrs_ticket["area"][] = "2";								// area number
+$otrs_ticket["area"][] = "2";                               // area number
 $otrs_ticket["area"][] = "5";
 [...]
 
 <a name="OTRSconfiguration"/>
 *OTRS configuration*
-$otrs_url      	= "http://domain.de/otrs/rpc.pl"; 			// URL of your otrs-server
-$otrs_username	= "otrs";									// OTRS-Webinterface -> SysConfig -> Framework -> Core::SOAP -> SOAP:User
-$otrs_password 	= "PASSWORD";								// OTRS-Webinterface -> SysConfig -> Framework -> Core::SOAP -> SOAP:Password
+$otrs_url       = "http://domain.de/otrs/rpc.pl";           // URL of your otrs-server
+$otrs_username  = "otrs";                                   // OTRS-Webinterface -> SysConfig -> Framework -> Core::SOAP -> SOAP:User
+$otrs_password  = "PASSWORD";                               // OTRS-Webinterface -> SysConfig -> Framework -> Core::SOAP -> SOAP:Password
 
 *ticket properties*
-$otrs_title_add			= "MRBS-OTRS: ";					//	Ticket-title
-$otrs_from_domain		= "domain.de";						//	(optional)	
-$otrs_queue				= "Postmaster";						//	create tickets in this queue
-$otrs_lock				= "unlock";							//  lock/unlock
-$otrs_state				= "new";							//  new/open/closed..
-$otrs_priority			= "3";								//	1/2/3/4/5 priority
-$otrs_articletype 		= "webrequest";						//		
-$otrs_sendertype		= "customer";						//	
-$otrs_historytype 		= "WebRequestCustomer";				//	
-$otrs_historycomment	= "created from MRBS via PHP";		//		
-$otrs_contenttype		= "text/plain; charset=ISO-8859-1";	//	
-$otrs_userid			=  1;								//	user in OTRS (1 = systemuser)		
+$otrs_title_add         = "MRBS-OTRS: ";                    //  Ticket-title
+$otrs_from_domain       = "domain.de";                      //  (optional)
+$otrs_queue             = "Postmaster";                     //  create tickets in this queue
+$otrs_lock              = "unlock";                         //  lock/unlock
+$otrs_state             = "new";                            //  new/open/closed..
+$otrs_priority          = "3";                              //  1/2/3/4/5 priority
+$otrs_articletype       = "webrequest";                     //
+$otrs_sendertype        = "customer";                       //
+$otrs_historytype       = "WebRequestCustomer";             //
+$otrs_historycomment    = "created from MRBS via PHP";      //
+$otrs_contenttype       = "text/plain; charset=ISO-8859-1"; //
+$otrs_userid            =  1;                               //  user in OTRS (1 = systemuser)
 ```
 
 <a name="Files"/>
