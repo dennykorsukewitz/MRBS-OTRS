@@ -15,13 +15,13 @@
 [Download](#Download)  
   
 
-<a name="Feature"/>
+
 ### Feature List
+
 * create a ticket in OTRS via SOAP::PHP
 * insert the tickernumber into the description of the booking room
 * tada = magic
 
-<a name="Installation"/>
 ### Installation
 
 #### MRBS-Server (sending server)
@@ -73,7 +73,7 @@
 		$result = mrbsMakeBookings($bookings, $this_id, $just_check, $skip, $original_room_id, $need_to_send_mail, $edit_type);
 	```
 
-<a name="Prerequisites"/>
+
 ### Prerequisites
 
 * install PHP-SOAP:  sudo apt-get install php-soap
@@ -81,8 +81,6 @@
 * set SOAP:username and SOAP:password
 * Perl module SOAP::Lite on otrs-server
 
-
-<a name="Configuration"/>
 ### Configuration
 Add these parameter into "config.inc.php" file.
 
@@ -114,14 +112,13 @@ $otrs_contenttype       = "text/plain; charset=ISO-8859-1"; //
 $otrs_userid            =  1;                               //  user in OTRS (1 = systemuser)
 ```
 
-<a name="Files"/>
+
 ### Files
 
 config.inc.php
 edit_entry_handler.php
 otrs.php
 
-<a name="Download"/>
 ### Download
 
 For download see [https://github.com/dennybresch/MRBS-OTRS)
