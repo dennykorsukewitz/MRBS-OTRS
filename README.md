@@ -1,9 +1,9 @@
-# MRBS-OTRS
+# OTRS-MRBS
 
     **Deprecated!** - This package works for MRBS version 1.4.10.
     All newer versions have not been tested and are not supported.
 
-MRBS-OTRS is a function to 'connect' the [MRBS](https://mrbs.sourceforge.io/) `(1.4.10) deprecated` with the Ticketsystem OTRS.
+OTRS-MRBS is a function to 'connect' the [MRBS](https://mrbs.sourceforge.io/) `(1.4.10) deprecated` with the Ticketsystem OTRS.
 The aim is to add a ticketnumber from OTRS into the description of the booking in MRBS.
 Every notification of the booking goes into the same ticket as article.
 How it works: create a ticket in OTRS via the OTRS rpc interface from PHP.
@@ -110,7 +110,7 @@ Add these parameter into "config.inc.php" file.
     $otrs_password  = "PASSWORD";                               // OTRS-Webinterface -> SysConfig -> Framework -> Core::SOAP -> SOAP:Password
 
     *ticket properties*
-    $otrs_title_add         = "MRBS-OTRS: ";                    //  Ticket-title
+    $otrs_title_add         = "OTRS-MRBS: ";                    //  Ticket-title
     $otrs_from_domain       = "domain.de";                      //  (optional)
     $otrs_queue             = "Postmaster";                     //  create tickets in this queue
     $otrs_lock              = "unlock";                         //  lock/unlock
@@ -127,7 +127,7 @@ Add these parameter into "config.inc.php" file.
 
 ### Download
 
-For download see [dennykorsukewitz/MRBS-OTRS](https://github.com/dennykorsukewitz/MRBS-OTRS)
+For download see [dennykorsukewitz/OTRS-MRBS](https://github.com/dennykorsukewitz/OTRS-MRBS)
 
 Enjoy!
 
