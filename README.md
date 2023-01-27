@@ -3,6 +3,18 @@
     **Deprecated!** - This package works for MRBS version 1.4.10.
     All newer versions have not been tested and are not supported.
 
+| GitHub | Repository |
+| ------ | ------ |
+| ![GitHub open issues](https://img.shields.io/github/issues/dennykorsukewitz/MRBS-OTRS) | ![GitHub release (latest by date)](https://img.shields.io/github/v/release/dennykorsukewitz/MRBS-OTRS) |
+| ![GitHub closed issues](https://img.shields.io/github/issues-closed/dennykorsukewitz/MRBS-OTRS?color=#44CC44) | ![GitHub license](https://img.shields.io/github/license/dennykorsukewitz/MRBS-OTRS) |
+| ![GitHub contributors](https://img.shields.io/github/contributors/dennykorsukewitz/MRBS-OTRS) | ![GitHub language count](https://img.shields.io/github/languages/count/dennykorsukewitz/MRBS-OTRS?style=flat&label=language)  |
+| ![GitHub all releases](https://img.shields.io/github/downloads/dennykorsukewitz/MRBS-OTRS/total?style=flat) |  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dennykorsukewitz/MRBS-OTRS)  |
+
+| Versions | Status |
+| ------ | ------ |
+| ![GitHub label version](https://img.shields.io/github/labels/dennykorsukewitz/DK4/dev) | [![GitHub commits since tagged version](https://img.shields.io/github/commits-since/dennykorsukewitz/MRBS-OTRS/v1.0/MRBS-OTRS-1.0)](https://github.com/dennykorsukewitz/MRBS-OTRS/compare/v1.0...MRBS-OTRS-1.0) ![GitHub Workflow Pages](https://github.com/dennykorsukewitz/MRBS-OTRS/actions/workflows/pages.yml/badge.svg?branch=dev&style=flat&label=GitHub%20Pages) |
+
+
 MRBS-OTRS is a function to 'connect' the [MRBS](https://mrbs.sourceforge.io/) `(1.4.10) deprecated` with the Ticketsystem OTRS.
 The aim is to add a ticketnumber from OTRS into the description of the booking in MRBS.
 Every notification of the booking goes into the same ticket as article.
