@@ -38,12 +38,11 @@ jobs:
           fetch-depth: "1"
         with:
           repository: dennykorsukewitz/DK4
-          ref: 'dev'
+          ref: 'dev' # update-dev
           path: DK4
 
       - name: Prepare config
-        run: |
-          cp -R ${GITHUB_WORKSPACE}/DK4/.github/pages/* ${GITHUB_WORKSPACE}/repository/
+        run: cp -R "${GITHUB_WORKSPACE}"/DK4/.github/pages/* "${GITHUB_WORKSPACE}"/repository/
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -57,14 +56,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          name: 'github-pages'
           path: ./_site
 
   # Deployment job
   Deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: "${steps.deployment.outputs.page_url}"
     runs-on: ubuntu-22.04 # ubuntu-latest
     needs: Build
     steps:
