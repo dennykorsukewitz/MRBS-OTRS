@@ -3,12 +3,12 @@
     **Deprecated!** - This package works for MRBS version 1.4.10.
     All newer versions have not been tested and are not supported.
 
-| GitHub | Repository |
+| Repository | GitHub |
 | ------ | ------ |
-| ![GitHub open issues](https://img.shields.io/github/issues/dennykorsukewitz/MRBS-OTRS) | ![GitHub release (latest by date)](https://img.shields.io/github/v/release/dennykorsukewitz/MRBS-OTRS) |
-| ![GitHub closed issues](https://img.shields.io/github/issues-closed/dennykorsukewitz/MRBS-OTRS?color=#44CC44) | ![GitHub license](https://img.shields.io/github/license/dennykorsukewitz/MRBS-OTRS) |
-| ![GitHub contributors](https://img.shields.io/github/contributors/dennykorsukewitz/MRBS-OTRS) | ![GitHub language count](https://img.shields.io/github/languages/count/dennykorsukewitz/MRBS-OTRS?style=flat&label=language)  |
-| ![GitHub all releases](https://img.shields.io/github/downloads/dennykorsukewitz/MRBS-OTRS/total?style=flat) |  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dennykorsukewitz/MRBS-OTRS)  |
+| ![GitHub release (latest by date)](https://img.shields.io/github/v/release/dennykorsukewitz/MRBS-OTRS) | ![GitHub open issues](https://img.shields.io/github/issues/dennykorsukewitz/MRBS-OTRS) |
+| ![GitHub license](https://img.shields.io/github/license/dennykorsukewitz/MRBS-OTRS) | ![GitHub closed issues](https://img.shields.io/github/issues-closed/dennykorsukewitz/MRBS-OTRS?color=#44CC44) |
+| ![GitHub language count](https://img.shields.io/github/languages/count/dennykorsukewitz/MRBS-OTRS?style=flat&label=language) | ![GitHub contributors](https://img.shields.io/github/contributors/dennykorsukewitz/MRBS-OTRS) |
+|  ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dennykorsukewitz/MRBS-OTRS) | ![GitHub all releases](https://img.shields.io/github/downloads/dennykorsukewitz/MRBS-OTRS/total?style=flat) |
 
 | Versions | Status |
 | ------ | ------ |
